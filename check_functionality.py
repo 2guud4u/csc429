@@ -17,5 +17,5 @@ def ui_test(target):
             raise "UI test failed"
     except Exception as e:
         print("UI test failed in except block", e)
-        raise("UI test failed")
+        raise("UI test failed", e)
     
