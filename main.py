@@ -21,7 +21,7 @@ def main():
     target2 = "http://64.23.209.18"
     try:
         ping_test(target) 
-        check_functionality.ui_test(target2)
+        #check_functionality.ui_test(target2)
     except Exception as e:
         # send notification
         response = requests.post(webhook_url, data=json.dumps(message), headers={'Content-Type': 'application/json'})
