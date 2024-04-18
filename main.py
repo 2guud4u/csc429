@@ -7,6 +7,7 @@ def main():
     target = "http://64.23.209.18/submit.php"
     try:
         ping_test(target) 
+        check_functionality.ui_test(target)
     except:
         # send notification
         return False
