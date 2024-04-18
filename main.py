@@ -49,8 +49,8 @@ def ping_test(target):
             print("{time}: {id}".format(time=current_time, id=t_id))
         else:
             raise("Ping test failed.")
-    except:
-        raise("Ping test failed.")
+    except Exception as e:
+        raise("Ping test failed.", e)
 
 
 if __name__ == "__main__":
