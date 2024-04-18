@@ -6,7 +6,6 @@ def ui_test(target):
     try:
         browser = webdriver.Firefox()
         browser.get(target)
-        time.sleep(5)
         browser.find_element(By.NAME, "firstName").send_keys("test")
         browser.find_element(By.NAME, "lastName").send_keys("test")
         browser.find_element(By.NAME, "phoneNumber").send_keys("123456789")
