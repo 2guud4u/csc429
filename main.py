@@ -13,7 +13,7 @@ with open('config.json', 'r') as config_file:
 webhook_url = config.get('webhook_url')
 
 message = {
-    'text': "The server is currently down. CHECK THE SERVER IMMEDIATELY!"
+    'text': "<!everyone> The server is currently down. CHECK THE SERVER IMMEDIATELY!"
 }
 
 def main():
