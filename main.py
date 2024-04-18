@@ -3,6 +3,7 @@ import requests
 import time
 import random
 import json
+import re
 
 # Load configuration from config.json
 with open('config.json', 'r') as config_file:
@@ -28,30 +29,26 @@ def main():
         else:
             print("Failed to send notification")
         return False
-    
-
-    
 
 
 def ping_test(target):
-
+    random_number = random.randint(0, 999)
+    payload = {'firstName': 'test', 
+            'lastName': 'test',
+            'phoneNumber': random_number, 
+            'item': 'Wand'}
+    header = {'Content-Type': 'application/x-www-form-urlencoded'}
     try:
-        random_number = random.randint(0, 999)
-        payload = {'firstName': 'test', 
-                'lastName': 'test',
-                'phoneNumber': random_number, 
-                'item': 'Wand'}
-        header = {'Content-Type': 'application/x-www-form-urlencoded'}
-
         r=requests.post(target, headers=header, data=payload)
         t = time.localtime()
-        current_time = time.strftime("%H:%M:%S", t)
-        print("{time}: {id}".format(time=current_time, id=r.text[-12:]))
-        # check r.text is valid id
+        pattern = re.compile(r'^[a-zA-Z0-9]{5}-[a-zA-Z0-9]{5}$')
+        t_id = r.text[-12:]
+        if len(r.text) == 66 and bool(pattern.match(t_id)):
+            current_time = time.strftime("%H:%M:%S", t)
+            print("{time}: {id}".format(time=current_time, id=t_id))
     except:
-        return False
+        raise("Ping test failed.")
 
-        
 
 if __name__ == "__main__":
     main()
