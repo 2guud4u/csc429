@@ -46,6 +46,8 @@ def ping_test(target):
         if len(r.text) == 66 and bool(pattern.match(t_id)):
             current_time = time.strftime("%H:%M:%S", t)
             print("{time}: {id}".format(time=current_time, id=t_id))
+        else:
+            raise("Ping test failed.")
     except:
         raise("Ping test failed.")
 
