@@ -11,6 +11,7 @@ def ui_test(target):
         browser.find_element(By.NAME, "phoneNumber").send_keys("123456789")
         browser.find_element(By.CLASS_NAME, "btn-primary").click()
         text = browser.find_element(By.TAG_NAME, "body").text
+        browser.quit()
         if "Order Submitted Successfully. Your transaction ID is:" not in text:
             print("UI test failed")
             raise "UI test failed"
