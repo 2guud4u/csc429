@@ -20,7 +20,7 @@ def main():
     target = "http://64.23.209.18/submit.php"
     target2 = "http://64.23.209.18"
     try:
-        ping_test(target) 
+        ping_test(target2) 
         check_functionality.ui_test(target2)
     except:
         # send notification
