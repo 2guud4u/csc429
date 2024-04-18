@@ -15,5 +15,3 @@ def ui_test(target):
     except:
         raise("UI test failed")
     
-
-ui_test("http://64.23.209.18//")
