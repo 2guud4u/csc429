@@ -5,14 +5,14 @@ import random
 
 def main():
     target = "http://64.23.209.18/submit.php"
-    ping_test(target)
+    try:
+        ping_test(target) 
+    except:
+        # send notification
+        return False
+    
 
-    if(check_functionality.check()):
-        #do nothing
-        print("All functionality is working fine")
-    else:
-        #send report
-        print("Some functionality is not working")
+    
 
 
 def ping_test(target):
