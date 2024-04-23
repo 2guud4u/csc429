@@ -17,7 +17,7 @@ message = {
 }
 
 def main():
-    target = "https://64.23.209.18/submit.php"
+    target = "https://team6.csc429.io/submit.php"
     target2 = "https://64.23.209.18"
     # try:
     ping_test(target) 
