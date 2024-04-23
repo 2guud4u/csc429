@@ -24,7 +24,8 @@ def main():
         #check_functionality.ui_test(target2)
     except Exception as e:
         # send notification
-        response = requests.post(webhook_url, data=json.dumps(message) + e, headers={'Content-Type': 'application/json'})
+        print(e)
+        response = requests.post(webhook_url, data=json.dumps(message), headers={'Content-Type': 'application/json'})
         if response.status_code == 200:
             print("Notification sent successfully")
         else:
