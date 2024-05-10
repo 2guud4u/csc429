@@ -27,7 +27,7 @@ def main():
         
         response = requests.post(webhook_url, data=json.dumps(message), headers={'Content-Type': 'application/json'})
         if response.status_code == 200:
-            print("Notification sent successfully", e)
+            print("Notification sent successfully")
         else:
             print("Failed to send notification. Status code: {status_code}".format(status_code=response.status_code))
         return False

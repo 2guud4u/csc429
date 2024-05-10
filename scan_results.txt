@@ -1,0 +1,2 @@
+port : 22	state : open
+port : 80	state : open
